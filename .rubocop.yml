@@ -1,0 +1,6 @@
+AllCops:
+  Exclude:
+    - db/**/*
+    - db/migrate/*
+    - bin/*
+  RunRailsCops: true

@@ -11,6 +11,9 @@ Lost your cat? Don't fret by the power of Ruby and kindness of strangers we'll f
   - Secure emails between cat finders and cat owners
   - Social login, via: Facebook, Twitter, etc
 
+* **Contributor Code of Covenant**
+  - Please read our ([Contributor Code of Covenant](https://github.com/rubyforcats/code_of_conduct)) before contributing
+
 * **Colophon**
   - Credits -- See `CONTRIBUTORS.md`
   - Copyright and License -- refer to the `LICENSE.md` file (Basically MIT).

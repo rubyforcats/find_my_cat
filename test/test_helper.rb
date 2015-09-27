@@ -1,10 +1,29 @@
+require 'simplecov'
+SimpleCov.start
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require 'minitest/autorun'
+require 'minitest/spec'
+# Improved Minitest output (color and progress bar)
+require 'minitest/reporters'
 
-class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  fixtures :all
+Minitest::Reporters.use!(
+  Minitest::Reporters::ProgressReporter.new,
+  ENV,
+  Minitest.backtrace_filter)
 
-  # Add more helper methods to be used by all tests here...
+# YARD COMMENT HERE
+module ActiveSupport
+  # Setup minitest here
+  class TestCase
+    ActiveRecord::Migration.check_pending!
+    fixtures :all
+
+    extend MiniTest::Spec::DSL
+
+    register_spec_type self do |desc|
+      desc < ActiveRecord::Base if desc.is_a? Class
+    end
+  end
 end

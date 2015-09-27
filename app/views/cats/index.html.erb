@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cats</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Bread</th>
+      <th>Color</th>
+      <th>Age</th>
+      <th>Microchip Number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cats.each do |cat| %>
+      <tr>
+        <td><%= cat.name %></td>
+        <td><%= cat.bread %></td>
+        <td><%= cat.color %></td>
+        <td><%= cat.age %></td>
+        <td><%= cat.microchip_number %></td>
+        <td><%= link_to 'Show', cat, class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_cat_path(cat), class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Destroy', cat, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to new_cat_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i>New Cat
+<% end %>

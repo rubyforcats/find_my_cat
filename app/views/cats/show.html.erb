@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-7 buffer alt post">
+  <header>
+    <h1><%= @cat.name %></h1>
+  </header>
+  <article>
+    <p><%= @cat.bread %></p>
+    <p><%= @cat.color %></p>
+    <p><%= @cat.age %></p>
+    <p><%= @cat.microchip_number %></p>
+  </article>
+</div>
+
+<%= link_to 'Edit', edit_cat_path(@cat) %> |
+<%= link_to 'Back', cats_path %>

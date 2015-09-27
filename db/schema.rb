@@ -15,10 +15,9 @@ ActiveRecord::Schema.define(version: 20150925210707) do
 
   create_table "cats", force: :cascade do |t|
     t.string   "name"
-    t.string   "bread"
+    t.string   "breed"
     t.string   "color"
     t.integer  "age"
-    t.boolean  "microchipped"
     t.string   "microchip_number"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
